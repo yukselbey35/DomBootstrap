@@ -10,6 +10,12 @@ eventListeners();
 function eventListeners(){
     //save submit events
     form.addEventListener('submit', addNewItem);
+    
+    //Delete an item
+    taskList.addEventListener('click', deleteItem);
+    //Delete all items
+    btnDeleteAll.addEventListener('click', deleteAllItems);
+
 }
 //Add a new item    
 function addNewItem(e){
@@ -38,7 +44,19 @@ function addNewItem(e){
     //to prevent refresh of the page
     e.preventDefault();
 }
-
+//Make the delete item function
+function deleteItem(e){
+    //console.log(e.target); 
+    if(e.target.className =='fas fa-times'){
+        e.target.parentElement.parentElement.remove();
+    }
+    e.preventDefault();
+}
+//To delete all items
+function deleteAllItems(e){
+    taskList.innerHTML='';
+    e.preventDefault();
+}
 
 
 
