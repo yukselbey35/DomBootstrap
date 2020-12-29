@@ -46,16 +46,32 @@ function addNewItem(e){
 }
 //Make the delete item function
 function deleteItem(e){
-    //console.log(e.target); 
-    if(e.target.className =='fas fa-times'){
-        e.target.parentElement.parentElement.remove();
+    if(confirm("You will delete the item?")){
+        //console.log(e.target); 
+        if(e.target.className ==='fas fa-times'){
+            e.target.parentElement.parentElement.remove();
+            e.preventDefault();
+        }
+        e.preventDefault();
     }
-    e.preventDefault();
+    
 }
 //To delete all items
 function deleteAllItems(e){
-    taskList.innerHTML='';
-    e.preventDefault();
+    if (confirm('You will delete all of the to do list items')){
+        taskList.innerHTML='';
+        e.preventDefault();
+    }
+
+    // if(confirm('You will delete all of the to do list items')){
+    //     taskList.childNodes.forEach(function(item){
+    //         if(item.nodeType ===1){
+    //             item.remove();
+    //         }
+    //     });
+    // }
+    // e.preventDefault();
+    
 }
 
 
