@@ -1,36 +1,11 @@
 pipeline {
-    
     agent any
 
     stages {
-
-        stage("build") {
-            
+        stage('Welcome') {
             steps {
-                echo 'build the apllication'
+                echo 'Welcome to Jenkins Hello World'
             }
-
         }
     }
-    
-    stage("test") {
-            
-            steps {
-                echo 'test the application'
-                
-            }
-
-        }
-    }
-
-    stage("deploy") {
-            
-            steps {
-                'deploy the application
-                
-            }
-
-        }
-    }
-
 }
